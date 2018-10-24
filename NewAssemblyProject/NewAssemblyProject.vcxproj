@@ -116,7 +116,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="MyFirstAssemblyProject.asm" />
+    <MASM Include="MyFirstAssemblyProject.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </MASM>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
