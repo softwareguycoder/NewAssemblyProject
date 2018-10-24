@@ -26,9 +26,12 @@ mov		al,ah
 mov		bl,bh
 cmp		al,bl
 je 		lbl7
+jne		lbl8
 
 lbl6:
 lbl7:
+INVOKE ExitProcess,0
+lbl8:
 INVOKE ExitProcess,0
 main ENDP
 
