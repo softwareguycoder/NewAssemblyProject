@@ -1,6 +1,6 @@
-; Program Name:					MyFirstAssemblyProject.asm
+; Program Name:					300.11.asm
 
-; Program Description:			Assembly programming tutorial for Visual Studio
+; Program Description:			Answer for Basic Developer JQR Item 300.11
 ; Author:						ENS Brian Hart
 ; Date:							24 Oct 2018
 
@@ -11,7 +11,8 @@ ExitProcess	PROTO, dwExitCode:DWORD
 
 .data
 ; declare variables here
-
+resne db "Values not equal$", 0
+reseq db "Values equal$", 0
 .code
 main PROC
 ; write your code here
@@ -21,17 +22,17 @@ main PROC
 mov		eax, 0000FF00h
 mov		ebx, 00008800h
 cmp		al,bl
-jne		lbl6
+jne		lowOrderNotEqual
 mov		al,ah
 mov		bl,bh
 cmp		al,bl
-je 		lbl7
-jne		lbl8
-
-lbl6:
-lbl7:
+je 		lowOrderEqual
 INVOKE ExitProcess,0
-lbl8:
+
+lowOrderNotEqual:
+INVOKE ExitProcess,0
+
+lowOrderEqual:
 INVOKE ExitProcess,0
 main ENDP
 
