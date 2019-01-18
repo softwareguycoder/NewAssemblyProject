@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="300.11.asm">
+    <MASM Include="NewAssemblyProject.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>

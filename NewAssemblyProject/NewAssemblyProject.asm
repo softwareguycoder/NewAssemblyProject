@@ -1,6 +1,6 @@
-; Program Name:					300.11.asm
+; Program Name:					NewAssemblyProject.asm
 
-; Program Description:			Answer for Basic Developer JQR Item 300.11
+; Program Description:			Answer for Basic Developer JQR Item 300.11,13,17
 ; Author:						ENS Brian Hart
 ; Date:							24 Oct 2018
 
@@ -30,21 +30,35 @@ main PROC
 
 ; 300.13 Draw the stack after the following commands, assume that the value of esp before the commands is 0x1000.
 
-nop
-nop
-nop
-; I want ESP to be aligned on a 4-KiB boundary
-and ESP,0FFFFF000h		; SET esp TO A NICE EVEN ADDRESS ENDING IN 3 ZERO'S -- TO QWORD-ALIGN IT
-mov	EAX,10h
-mov EBX,20h
-mov EDX,30h
-mov ECX,40h
-mov ESI,50h
-mov EDI,60h
-mov EBP,70h
-pushad
+; nop
+; nop
+; nop
+; ; I want ESP to be aligned on a 4-KiB boundary
+; and ESP,0FFFFF000h		; SET esp TO A NICE EVEN ADDRESS ENDING IN 3 ZERO'S -- TO QWORD-ALIGN IT
+; mov	EAX,10h
+; mov EBX,20h
+; mov EDX,30h
+; mov ECX,40h
+; mov ESI,50h
+; mov EDI,60h
+; mov EBP,70h
+; pushad
 
-INVOKE ExitProcess,0
+; 300.17 Discuss the difference between ja and jg.  Which label(s) will be jumped to in the code below?
+
+mov eax, 0FFFFFFFFH
+mov ebx, 1
+cmp eax, ebx
+jg  label1
+ja  label2
+
+label1:
+nop
+
+label2:
+nop
+
+ INVOKE ExitProcess,0
 
 lowOrderNotEqual:
 INVOKE ExitProcess,0
